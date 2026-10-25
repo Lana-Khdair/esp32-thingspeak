@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Lana Khdair",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 16.2, "left": 12.4, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -129.56, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -38.1, "left": 138.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0", "h-220.8" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:13t.b", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:14t.b", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:15t.b", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:16t.b", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:bn.13", "black", [ "v0" ] ],
+    [ "bb1:bn.1", "esp:GND.1", "black", [ "v8.3", "h-228.8", "v-57.6" ] ]
+  ],
+  "dependencies": {}
+}
